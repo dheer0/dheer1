@@ -34,6 +34,6 @@ if st.button("PREDICT PRICE"):
     X_res=int(screen_resolution.split('x')[0])
     Y_res=int(screen_resolution.split('x')[1])
     ppi = ((X_res**2)+(Y_res**2))**0.5/screen_size
-    query=[[company,typename,cpu,ram,gpu,os,weight,touchscreen,ips,cpu_speed,hdd,ssd,ppi]]
+    query=[company,typename,cpu,ram,gpu,os,weight,touchscreen,ips,cpu_speed,hdd,ssd,ppi]
     op=pipe.predict(query)
     st.subheader("The estimated price of the laptop with the above mentioned specs is ₹"+str(int(round(op[0],-2)))+".")
